@@ -1,0 +1,156 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    width: 100%;
+    height: 100vh;
+    background: url('/seminar2.PNG') no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    
+}
+
+main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 700px;
+    border-radius: 10px;
+    background: url('/seminar2.PNG') no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    backdrop-filter: blur(8px);
+}
+
+#seminarForm .frm {
+    position: relative;
+    width: 340px;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.frm input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #e4e4e4;
+    outline: none;
+    padding: 2px 5px;
+}
+
+.frm label {
+    position: absolute;
+    padding: 2px 10px;
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-weight: 700;
+    pointer-events: none;
+    transition: .5s ease;
+}
+.frm .icon {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    font-size: 19px;
+    padding: 2px 10px;
+    color: black;
+}
+.frm input:focus {
+    border-bottom: 1px solid #426cf5;
+}
+
+.frm input:focus~label,
+.frm input:valid~label {
+    top: -5px;
+
+}
+h1 {
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#seminarForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#seminarForm input[type="text"],
+#seminarForm input[type="email"] {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#seminarForm label {
+    margin: 10px;
+    color: black;
+}
+
+#btn {
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #fff;
+    color: black;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#btn:hover {
+    background-color: lightcyan;
+    color: #426cf5;
+}
+
+
+@media (min-width: 350px) and (max-width: 768px) {
+    main {
+        width: 50%;
+        height: auto;
+    }
+    #seminarForm .frm {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    main {
+        width: 60%;
+        height: auto;
+    }
+    #seminarForm .frm {
+        width: 100%;
+    }
+}

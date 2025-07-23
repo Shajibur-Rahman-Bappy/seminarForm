@@ -9,16 +9,90 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: black;
     width: 100%;
     height: 100vh;
-    background: url('/seminar2.PNG') no-repeat;
-    background-size: cover;
-    background-position: center;
-
-
+    background:#030206 url('/33408.jpg') ;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:cover;
 }
-
+.header {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    z-index: 100;
+    background-color:#e4e4e4;   
+}
+.header .nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header img {
+    height: 44px;
+    width: 175px;
+}
+.header ul { 
+    display: flex;
+    align-items: center;
+}
+.header ul li {
+    list-style-type: none;
+    display: flex;
+    margin: 0 50px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    font-size: 1.2rem;
+}
+.header ul li a {
+    text-decoration: none;
+    color: #2972a1;
+    font-weight: 600;
+}
+.search {
+    width: 250px;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #2972a1;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+.search input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: black;
+    padding-left: 10px;
+}
+.search button {
+    width: 40px;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.search button i {
+    font-size: 22px;
+    color:#2972a1;
+}
+.header .toggle {
+    color: black;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+}
 main {
     position: absolute;
     top: 50%;
@@ -27,13 +101,12 @@ main {
     width: 50%;
     height: auto;
     border-radius: 10px;
-    background: url('/seminar2.PNG') no-repeat;
+    background: url('/33408.jpg') no-repeat;
     background-size: cover;
     background-position: center;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .container {
     display: flex;
     flex-direction: column;
@@ -51,6 +124,16 @@ main {
     width: 340px;
     height: 50px;
     margin: 30px 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px rgb(96, 105, 129) inset !important;
+}
+input:-webkit-autofill{
+    -webkit-text-fill-color: rgb(255, 255, 255) !important;
 }
 
 .frm input {
@@ -82,10 +165,11 @@ main {
     font-size: 19px;
     padding: 2px 10px;
     color: white;
+    
 }
 
 .frm input:focus {
-    border-bottom: 1px solid #426cf5;
+    border-bottom: 1px solid #2972a1;
 }
 
 .frm input:focus~label,
@@ -110,11 +194,14 @@ h1 {
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 20px;
+    color: #fff;
+    text-shadow: #333;
 }
 
 #seminarForm label {
     margin: 10px;
     color: white;
+    text-shadow: #333;
 }
 
 #btn {
@@ -135,18 +222,65 @@ h1 {
 
 #btn:hover {
     background-color: lightcyan;
-    color: #426cf5;
+    color: #2972a1;
+}
+.dropdownMenu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 80px;
+    width: 200px;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow:hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.dropdownMenu.open {
+    height: 240px;
+}
+.dropdownMenu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dropdownMenu li a {
+    text-decoration: none;
+    color: black;
+}
+.dropdownMenu .search {
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
 }
 
+@media (max-width:992px) {
+     .header ul li a,
+    .header .search {
+        display: none;
+    }
+    .header .toggle {
+        display: block;
+    }
+    .dropdownMenu {
+        display: block;
+        position:sticky;
+    }
+}
+ 
 
-@media (max-width: 600px) {
+
+@media (max-width: 576px) {
 
     body {
         background: url('/seminar2.PNG')no-repeat cover;
     }
     main {
+        position: relative;
         width: 80%;
-        
     }
     .container #seminarForm .frm {
         width: 90%;
@@ -164,7 +298,10 @@ h1 {
         font-size: clamp(1.5rem, 4vw, 2.5rem);
         color: white;
     }
+
+    .dropdownMenu {
+        left: 2rem;
+        width: unset;
+    }
+    
 }
-
-
-

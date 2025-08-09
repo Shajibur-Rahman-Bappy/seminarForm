@@ -274,10 +274,6 @@ h1 {
 
 
 @media (max-width: 576px) {
-
-    body {
-        background: url('/seminar2.PNG')no-repeat cover;
-    }
     main {
         position: relative;
         width: 80%;
